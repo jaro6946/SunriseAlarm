@@ -19,6 +19,7 @@ var dateVar
 var alarmTime
 var possibleAlarmColor
 var AlarmColor
+var alarmColor
 alarmSet=false
 j=0
 $(document).ready(function() {
@@ -84,10 +85,10 @@ $(document).ready(function() {
 				$('#setDate').html("Alarm Set!");
 				app.sliderUpdate("S".concat(0))
 				app.sliderUpdate("V".concat(0))
-				
+				alarmColor=possibleAlarmColor
 				j=0;
 				t=setTimeout(function(){
-					app.alarmFunction(possibleAlarmColor)
+					app.alarmFunction(alarmColor)
 					},alarmTime-new Date()-10*60*1000);
 				console.log('time out')
 				console.log(alarmTime-new Date()-10*60*1000)
