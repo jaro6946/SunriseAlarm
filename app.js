@@ -16,10 +16,8 @@
 
 var timeVar
 var dateVar
-var alarmTime
-var possibleAlarmColor
-var AlarmColor
-var alarmColor
+
+
 alarmSet=false
 j=0
 $(document).ready(function() {
@@ -52,7 +50,7 @@ $(document).ready(function() {
 	$(document).on('input','#VSlider',function(){
 			
 			app.sliderUpdate("V".concat(this.value))
-			possibleAlarmColor=this.value
+			
 		
 	})	
 	 $('#date').datepicker({
@@ -83,12 +81,12 @@ $(document).ready(function() {
 			if (alarmTime-new Date()>0){
 				alarmSet=true;
 				$('#setDate').html("Alarm Set!");
-				app.sliderUpdate("S".concat(0))
+				app.sliderUpdate("S".concat(100))
 				app.sliderUpdate("V".concat(0))
 				alarmColor=possibleAlarmColor
 				j=0;
 				t=setTimeout(function(){
-					app.alarmFunction(alarmColor)
+					app.alarmFunction()
 					},alarmTime-new Date()-10*60*1000);
 				console.log('time out')
 				console.log(alarmTime-new Date()-10*60*1000)
@@ -172,14 +170,14 @@ app.PORT = 1337
 app.socketId
 
 
-app.alarmFunction=function(AlarmColor){
+app.alarmFunction=function(){
 
 	
 			console.log('I made it cpt');
 
 		
-			app.sliderUpdate("H".concat(AlarmColor));
-			app.sliderUpdate("S".concat(100));
+			
+			
 			inter=setInterval(function(){ 
 			
 				
