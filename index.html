@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no,
+		shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+	<title>ESP8266</title>
+
+	<style>
+		@import 'ui/css/evothings-app.css';
+		@import 'app.css';
+		@import 'libs/jquery-timepicker-master/jquery.timepicker.css';
+	</style>
+
+	<script>
+		// Redirect console.log to Evothings Workbench.
+		if (window.hyper && window.hyper.log) { console.log = hyper.log }
+	</script>
+
+	<script src="cordova.js"></script>
+	<script src="libs/jquery/jquery.js"></script>
+	<script src="libs/evothings/evothings.js"></script>
+	<script src="libs/evothings/ui/ui.js"></script>
+	<script src="libs/jquery-timepicker-master/jquery.timepicker.js"></script>"
+	<script src="app.js"></script>
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"> 
+</head>
+
+<body ontouchstart="">
+
+	<header>
+
+		<button class="back" onclick="history.back()">
+			<img src="ui/images/arrow-left.svg" />
+		</button>
+
+		<img class="logotype" src="img/jacob.svg" alt="Jacob" />
+
+	</header>
+
+	
+
+	<div id="startView">
+
+		<h1>ESP8266</h1>
+
+		<img class="center" style="width:70%;padding: 25px 0px" src="img/esp8266.jpg">
+
+		<h2>Enter IP-address of the ESP8266</h2>
+
+		<input id="IPAddress" value="192.168.1.184" type="url">
+
+		<button id="connectButton" class="green wide"> Connect </button>
+
+	</div>
+
+	<div id="connectingView" style="display:none">
+
+		<div id="connectingIndicator">
+
+			<img src="img/loader.gif">
+			<p id="connectingStatus"></p>
+
+		</div>
+
+	</div>
+
+	<div id="controlView" style="display:none">
+
+		<p>Set Hue, Saturation, and Value of the lamp.</p>
+
+		<div id="ledView">
+			
+			
+			<div style="display:inline-block">
+				
+				<div class="slidecontainer">
+					<label for="points">H (between 0 and 100):</label>
+					<input type="range" id="HSlider" class="slider" min="0" max="100" value="0">	
+
+				</div>
+
+				<div class="slidecontainer">
+					<label for="points">S (between 0 and 100):</label>
+					<input type="range" id="SSlider" class="slider" min="0" max="100" value="0">	
+
+				</div>
+
+				<div class="slidecontainer">
+					<label for="points">V (between 0 and 100):</label>
+					<input type="range" id="VSlider" class="slider" min="0" max="100" value="0">	
+
+				</div>
+				<p>Set Time</p>
+				<div>
+					<input id="time" type="text" class="timepicker" inputmode='none' />
+				</div>
+				<p>Set Date</p>
+				<div>
+					<input id="date" type="text" class="datepicker" inputmode='none'/>
+				</div>
+				<div>
+					<button type="button" id="setDate"> Alarm Unset </button>
+				</div>
+			</div>
+		</div>
+
+		<button id="disconnectButton" class="red wide"> Disconnect </button>
+
+	</div>
+
+</body>
+</html>
