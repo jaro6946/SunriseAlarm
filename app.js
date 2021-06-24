@@ -273,6 +273,7 @@ app.sendString = function(sendString) {
 
 				console.log(errorMessage)
 				navigator.notification.alert(errorMessage, function() {})
+				app.connect()
 			}
 		}
 	)
