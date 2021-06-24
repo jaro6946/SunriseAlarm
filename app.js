@@ -174,7 +174,7 @@ app.alarmFunction=function(){
 
 	
 			console.log('I made it cpt');
-
+			clearTimeout(t);
 		
 			
 			
