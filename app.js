@@ -83,7 +83,7 @@ $(document).ready(function() {
 				$('#setDate').html("Alarm Set!");
 				app.sliderUpdate("S".concat(100))
 				app.sliderUpdate("V".concat(0))
-				alarmColor=possibleAlarmColor
+				
 				j=0;
 				t=setTimeout(function(){
 					app.alarmFunction()
